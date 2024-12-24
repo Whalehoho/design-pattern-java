@@ -3,7 +3,7 @@ package notifier;
 // Concrete Decorator
 
 // Facebook Decorator
-class FacebookDecorator extends NotifierDecorator {
+class FacebookDecorator extends Decorator {
     public FacebookDecorator(Notifier notifier) {
         super(notifier);
     }

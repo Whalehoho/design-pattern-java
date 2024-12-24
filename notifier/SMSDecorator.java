@@ -3,7 +3,7 @@ package notifier;
 // Concrete Decorator
 
 // SMS Decorator
-class SMSDecorator extends NotifierDecorator {
+class SMSDecorator extends Decorator {
     public SMSDecorator(Notifier notifier) {
         super(notifier);
     }
