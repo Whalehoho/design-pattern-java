@@ -4,20 +4,24 @@ public class Client {
     public static void main(String[] args) {
         // Creating a new Detailed_Address instance (Version 3)
         AdapteeAddress detailedAddress = new CustAdapteeAddress();
-        detailedAddress.setNo(123);
-        detailedAddress.setRoad("Baker Street");
-        detailedAddress.setArea("West End");
-        detailedAddress.setCity("London");
-        detailedAddress.setState("Greater London");
-        detailedAddress.setPostcode(12345);
-        detailedAddress.setCountry("UK");
-
-        // Using the AddressAdapter to adapt the Detailed_Address to Address
-        TargetAddress address = new AddressAdapter(detailedAddress);
-        address.setAddress("");
         
-        // Getting the adapted address in a simple format
-        System.out.println("Address: " + address.getAddress());
+        // Creating an AddressAdapter instance
+        AddressAdapter addressAdapter = new AddressAdapter(detailedAddress);
+
+        // Set address using old format
+        addressAdapter.setAddress("123, Main St, Downtown, City, State, 12345, Country");
+
+        // Get address using old format
+        System.out.println(addressAdapter.getAddress());
+
+        // Get address details using new format
+        System.out.println("No: " + detailedAddress.getNo());
+        System.out.println("Road: " + detailedAddress.getRoad());
+        System.out.println("Area: " + detailedAddress.getArea());
+        System.out.println("City: " + detailedAddress.getCity());
+        System.out.println("State: " + detailedAddress.getState());
+        System.out.println("Postcode: " + detailedAddress.getPostcode());
+        System.out.println("Country: " + detailedAddress.getCountry());
 
     }
 
