@@ -5,8 +5,8 @@ public class Client {
         // Creating a new Detailed_Address instance (Version 3)
         AdapteeAddress detailedAddress = new CustAdapteeAddress();
         
-        // Creating an AddressAdapter instance
-        AddressAdapter addressAdapter = new AddressAdapter(detailedAddress);
+        // Creating an AddressAdapter instance but using the TargetAddress interface
+        TargetAddress addressAdapter = new AddressAdapter(detailedAddress);
 
         // Set address using old format
         addressAdapter.setAddress("123, Main St, Downtown, City, State, 12345, Country");
